@@ -38,12 +38,12 @@ export default function LoginForm() {
         setState({...state, aguardando: true})
         event.preventDefault()
         try{
-            const result = await api.post('usuario/login', {email, senha})
+            const result = await api.post('usuario/login', {json: {email, senha}}).json()
             // Armazena o token no session storage
-            window.sessionStorage.setItem('app-data', result.data?.token)
+            //window.sessionStorage.setItem('app-data', result.data?.token)
             setState({
                 ...state, 
-                resultado: result.data, 
+                resultado: result, 
                 aguardando: false,
                 alertBarOpen: true,
                 alertBarSeverity: 'success',
