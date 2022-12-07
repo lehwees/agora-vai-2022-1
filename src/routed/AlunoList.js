@@ -102,7 +102,7 @@ export default function AlunoList() {
         //flex: 1
       },
       {
-        //field: 'turma.nome',
+        // field: 'turma.nome',
         headerName: 'Turma',
         width: 150,
         valueGetter: params => params.row.turma?.nome
